@@ -8,11 +8,11 @@
 //import SwiftUI
 //
 //struct CalculatorView: View {
-//    
+//
 //    @StateObject var calculateVM: CalculateViewModel
-//    
+//
 //    @State var resultNumber: String = "0"
-//    
+//
 //    var body: some View {
 //        GeometryReader { geometry in
 //            ZStack {
@@ -100,12 +100,7 @@ struct CalculatorView: View {
                         ForEach(calculateVM.buttonData, id: \.self) { line in
                             HStack {
                                 ForEach(line, id: \.self) { data in
-                                    if data != "0" {
-                                        ButtonView(buttonColor: Color.gray, buttonWidth: geometry.size.width * 0.19, buttonHeight: geometry.size.width * 0.19, buttonTitle: data, textSize: geometry.size.width * 0.08, textColor: Color.black)
-                                    }else {
-                                        ButtonView(buttonColor: Color.gray, buttonWidth: geometry.size.width * 0.422, buttonHeight: geometry.size.width * 0.19, buttonTitle: data, textSize: geometry.size.width * 0.08, textColor: Color.black)
-                                    }
-                                        
+                                    ButtonView(buttonColor: Color.gray, buttonWidth: data != "0" ? geometry.size.width * 0.19 : geometry.size.width * 0.422, buttonHeight: geometry.size.width * 0.19, buttonTitle: data, textSize: geometry.size.width * 0.08, textColor: Color.black, resultNumber: $resultNumber)
                                 }
                             }
                         }
