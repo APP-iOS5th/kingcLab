@@ -8,10 +8,12 @@
 import Foundation
 
 class CalculateViewModel: ObservableObject {
-//    let numberTitle: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-//    let signTitle: [String] = ["C", "percent", "divide", "multiply", "minus", "plus", "equal", ".", "plus.forwardslash.minus"]
-//    
-//    @Published var button: [ButtonView] = []
-    
+    @Published var buttonData: [[String]] = [
+        ["AC", "plus.forwardslash.minus", "percent", "divide"],
+        ["7", "8", "9", "multiply"],
+        ["4", "5", "6", "minus"],
+        ["1", "2", "3", "plus"],
+        ["0", ".", "equal"]
+    ]
     
 }

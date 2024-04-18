@@ -27,9 +27,17 @@ struct ButtonView: View {
                     .cornerRadius(100)
                     .foregroundColor(buttonColor)
                     .overlay {
-                        Text(buttonTitle)
-                            .font(.system(size: textSize))
-                            .foregroundColor(textColor)
+                        HStack {
+                            if buttonTitle.count > 3 {
+                                Image(systemName: buttonTitle)
+                                    .font(.system(size: textSize))
+                                    .foregroundColor(textColor)
+                            }else {
+                                Text(buttonTitle)
+                                    .font(.system(size: textSize))
+                                    .foregroundColor(textColor)
+                            }
+                        }
                     }
             }
     }
