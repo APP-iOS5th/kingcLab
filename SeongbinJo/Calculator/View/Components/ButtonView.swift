@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ButtonView: View {
     
+    @EnvironmentObject var calculateVM: CalculateViewModel
+    
     let buttonColor: Color
     let buttonWidth: CGFloat
     let buttonHeight: CGFloat
@@ -30,7 +32,7 @@ struct ButtonView: View {
                         resultNumber += buttonTitle
                     }
                 case "AC":
-                    resultNumber = "0"
+                    
                 case "plus.forwardslash.minus":
                     if resultNumber.first == "-" {
                         resultNumber.removeFirst()
