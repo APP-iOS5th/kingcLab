@@ -16,4 +16,27 @@ class CalculateViewModel: ObservableObject {
         ["0", ".", "equal"]
     ]
     
+    var answer: String = ""
+    
+    func acAction() -> String {
+        return "0"
+    }
+    
+    func plusMinusAction(resultNumber numStr: String) -> String {
+        answer = numStr
+        if numStr.first == "-" {
+            answer = String(answer.removeFirst())
+        }else {
+            answer = "-" + answer
+        }
+        
+        return answer
+    }
+    
+    func percentAction(resultNumber numStr: String) -> String {
+        
+        
+        return answer
+    }
+    
 }
