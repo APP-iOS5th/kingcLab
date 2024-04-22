@@ -9,11 +9,6 @@ import SwiftUI
 
 struct ButtonView: View {
     
-<<<<<<< HEAD
-    @EnvironmentObject var calculateVM: CalculateViewModel
-    
-=======
->>>>>>> kingclab/main
     let buttonColor: Color
     let buttonWidth: CGFloat
     let buttonHeight: CGFloat
@@ -21,51 +16,6 @@ struct ButtonView: View {
     
     let textSize: CGFloat
     let textColor: Color
-<<<<<<< HEAD
-    
-    @Binding var resultNumber: String
-    
-    var signOperation: String = ""
-    
-    var body: some View {
-        Button(action: {
-            print("\(buttonTitle) Clicked!")
-            switch buttonTitle {
-            case "0":
-                resultNumber = calculateVM.zeroAction(resultNumber: resultNumber, inputNumber: buttonTitle)
-            case "AC":
-                resultNumber = calculateVM.acAction()
-            case "plus.forwardslash.minus":
-                resultNumber = calculateVM.plusMinusAction(resultNumber: resultNumber)
-            case "percent":
-                resultNumber = calculateVM.percentAction(resultNumber: resultNumber)
-            case "plus", "minus", "divide", "multiply":
-                resultNumber = calculateVM.basicOperationAction(resultNumber: resultNumber, inputNumber: buttonTitle)
-            case "equal":
-                resultNumber = calculateVM.basicCalculate(resultNumber: resultNumber)
-            default:
-                resultNumber = calculateVM.zeroAction(resultNumber: resultNumber, inputNumber: buttonTitle)
-            }
-        }) {
-            Rectangle()
-                .frame(width: buttonWidth, height: buttonHeight)
-                .cornerRadius(100)
-                .foregroundColor(buttonColor)
-                .overlay {
-                    HStack {
-                        if buttonTitle.count > 3 {
-                            Image(systemName: buttonTitle)
-                                .font(.system(size: textSize))
-                                .foregroundColor(textColor)
-                        }else {
-                            Text(buttonTitle)
-                                .font(.system(size: textSize))
-                                .foregroundColor(textColor)
-                        }
-                    }
-                }
-        }
-=======
    
     @Binding var resultNumber: String
     
@@ -113,7 +63,6 @@ struct ButtonView: View {
                         }
                     }
             }
->>>>>>> kingclab/main
     }
 }
 

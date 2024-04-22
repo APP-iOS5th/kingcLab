@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ////
 ////  CalculatorView.swift
 ////  Calculator
@@ -71,7 +69,6 @@
 //    CalculatorView(calculateVM: CalculateViewModel())
 //}
 
->>>>>>> kingclab/main
 //
 //  CalculatorView.swift
 //  Calculator
@@ -97,14 +94,6 @@ struct CalculatorView: View {
                     Spacer()
                     Text(resultNumber)
                         .foregroundColor(.white)
-<<<<<<< HEAD
-                        .font(.system(size: geometry.size.width * 0.2))
-                    VStack(spacing: geometry.size.width * 0.04) {
-                        ForEach(calculateVM.buttonData, id: \.self) { line in
-                            HStack(spacing: geometry.size.width * 0.04) {
-                                ForEach(line, id: \.self) { data in
-                                    ButtonView(buttonColor: data == line.last ? Color.orange : Color.gray, buttonWidth: data != "0" ? geometry.size.width * 0.19 : geometry.size.width * 0.41, buttonHeight: geometry.size.width * 0.19, buttonTitle: data, textSize: geometry.size.width * 0.08, textColor: Color.black, resultNumber: $resultNumber)
-=======
                         .font(.system(size: geometry.size.width * 0.14))
                         .background(.yellow)
                     VStack {
@@ -112,15 +101,11 @@ struct CalculatorView: View {
                             HStack {
                                 ForEach(line, id: \.self) { data in
                                     ButtonView(buttonColor: Color.gray, buttonWidth: data != "0" ? geometry.size.width * 0.19 : geometry.size.width * 0.422, buttonHeight: geometry.size.width * 0.19, buttonTitle: data, textSize: geometry.size.width * 0.08, textColor: Color.black, resultNumber: $resultNumber)
->>>>>>> kingclab/main
                                 }
                             }
                         }
                     }
-<<<<<<< HEAD
-=======
                     .background(.green)
->>>>>>> kingclab/main
                     Spacer()
                 }
             }
