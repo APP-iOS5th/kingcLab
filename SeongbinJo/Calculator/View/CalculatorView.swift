@@ -23,18 +23,16 @@ struct CalculatorView: View {
                     Spacer()
                     Text(resultNumber)
                         .foregroundColor(.white)
-                        .font(.system(size: geometry.size.width * 0.14))
-                        .background(.yellow)
-                    VStack {
+                        .font(.system(size: geometry.size.width * 0.2))
+                    VStack(spacing: geometry.size.width * 0.04) {
                         ForEach(calculateVM.buttonData, id: \.self) { line in
-                            HStack {
+                            HStack(spacing: geometry.size.width * 0.04) {
                                 ForEach(line, id: \.self) { data in
-                                    ButtonView(buttonColor: Color.gray, buttonWidth: data != "0" ? geometry.size.width * 0.19 : geometry.size.width * 0.41, buttonHeight: geometry.size.width * 0.19, buttonTitle: data, textSize: geometry.size.width * 0.08, textColor: Color.black, resultNumber: $resultNumber)
+                                    ButtonView(buttonColor: data == line.last ? Color.orange : Color.gray, buttonWidth: data != "0" ? geometry.size.width * 0.19 : geometry.size.width * 0.41, buttonHeight: geometry.size.width * 0.19, buttonTitle: data, textSize: geometry.size.width * 0.08, textColor: Color.black, resultNumber: $resultNumber)
                                 }
                             }
                         }
                     }
-                    .background(.green)
                     Spacer()
                 }
             }

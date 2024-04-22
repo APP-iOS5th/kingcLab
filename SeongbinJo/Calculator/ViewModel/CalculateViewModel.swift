@@ -3,7 +3,6 @@
 //  Calculator
 //
 //  Created by 조성빈 on 4/18/24.
-//
 
 import Foundation
 
@@ -20,10 +19,12 @@ class CalculateViewModel: ObservableObject {
     
     var answer: String = ""
     
+    // "AC" 버튼 액션
     func acAction() -> String {
         return "0"
     }
     
+    // "0" 버튼 액션
     func zeroAction(resultNumber numStr: String, inputNumber inputStr: String) -> String {
         if numStr == "0" {
             return inputStr
@@ -41,7 +42,6 @@ class CalculateViewModel: ObservableObject {
         }else {
             answer = "-" + answer
         }
-        
         return answer
     }
     
@@ -75,7 +75,6 @@ class CalculateViewModel: ObservableObject {
         }else {
             return numStr
         }
-        
         return answer
     }
     
