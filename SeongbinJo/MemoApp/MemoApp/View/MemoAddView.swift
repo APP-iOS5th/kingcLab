@@ -13,7 +13,7 @@ struct MemoAddView: View {
     
     @State private var memoText: String = ""
     @State private var selectedColor: String = ""
-    @State private var clickedColor: Color = .gray
+    @State private var clickedColor: Color = .white
     
     @Binding var isSheetShow: Bool
     
@@ -23,6 +23,24 @@ struct MemoAddView: View {
         ZStack {
             clickedColor.ignoresSafeArea()
             VStack {
+                HStack {
+                    Button(action: {
+                        isSheetShow = false
+                        memoText = ""
+                    }) {
+                        Text("취소")
+                    }
+                    Spacer()
+                    Button(action: {
+                        isSheetShow = false
+                        memoVM.addMemo(text: memoText, createDate: Date(), color: selectedColor, modelContext: modelContext)
+                        memoText = ""
+                    }) {
+                        Text("완료")
+                    }
+                    .disabled(memoText.count > 0 ? false : true)
+                }
+                Spacer()
                 VStack {
                     TextField("메모를 입력하세요.", text: $memoText)
                         .textFieldStyle(.roundedBorder)
@@ -53,26 +71,11 @@ struct MemoAddView: View {
                         }
                     }
                     .padding(.vertical, 30)
-                    HStack(spacing: 50) {
-                        Button(action: {
-                            isSheetShow = false
-                            memoText = ""
-                        }) {
-                            Text("취소")
-                                .foregroundColor(.black)
-                        }
-                        Button(action: {
-                            isSheetShow = false
-                            memoVM.addMemo(text: memoText, createDate: Date(), color: selectedColor, modelContext: modelContext)
-                            memoText = ""
-                        }) {
-                            Text("완료")
-                                .foregroundColor(.black)
-                        }
-                    }
                 }
+                .padding()
+                Spacer()
             }
-            .padding(30)
+            .padding()
         }
     }
 }
