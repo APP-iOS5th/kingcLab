@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var todoVM: TodoViewModel = TodoViewModel()
+    
     var body: some View {
         TodoMainView()
+            .environmentObject(todoVM)
     }
 }
 

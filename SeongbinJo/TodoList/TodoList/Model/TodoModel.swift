@@ -6,30 +6,42 @@
 //
 
 import Foundation
+import SwiftData
 
 // 우선사항
-enum Priority: Comparable {
-    case high
-    case medium
-    case low
+enum Priority: Int, RawRepresentable {
+    case high = 2
+    case medium = 1
+    case low = 0
 }
 
 // 투두 모델
-struct Task: Identifiable {
+@Model
+class Task: Identifiable {
     var id = UUID()
-    var completed: Bool
-    var description: String
-    var priority: Priority
-}
-
-extension Task {
-    static var tasks = [
-        Task(completed: false, description: "Wake up", priority: .low ),
-        Task(completed: false, description: "Shower", priority: .medium),
-        Task(completed: false, description: "Code", priority: .high),
-        Task(completed: false, description: "Eat", priority: .high ),
-        Task(completed: false, description: "Sleep", priority: .high),
-        Task(completed: false, description: "Get groceries", priority: .high)
-    ]
-    static var task = tasks[0]
+    var completed: Bool = false
+    var text: String
+    var priorityValue: Int
+    var createDate: Date
+    var color: String
+    
+    @Transient
+    var dateString: String {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy/MM/dd HH:mm"
+        return dateFormatter.string(from: createDate)
+    }
+    
+    var priority: Priority {
+            get { Priority(rawValue: priorityValue) ?? .low }
+            set { priorityValue = newValue.rawValue }
+        }
+    
+    init(text: String, color: String, createDate: Date, priorityValue: Int) {
+        self.text = text
+//        self.priority = priority
+        self.color = color
+        self.createDate = createDate
+        self.priorityValue = priorityValue
+    }
 }
