@@ -16,7 +16,6 @@
 		58586B312BDA0EB400145DF8 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58586B302BDA0EB400145DF8 /* TodoView.swift */; };
 		58586B332BDA17C800145DF8 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58586B322BDA17C800145DF8 /* AddTodoView.swift */; };
 		58586B362BDA21A200145DF8 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58586B352BDA21A200145DF8 /* TodoViewModel.swift */; };
-		58586B382BDA2F7E00145DF8 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58586B372BDA2F7E00145DF8 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		58586B302BDA0EB400145DF8 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		58586B322BDA17C800145DF8 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		58586B352BDA21A200145DF8 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
-		58586B372BDA2F7E00145DF8 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +63,6 @@
 			children = (
 				58586B1B2BDA0D6100145DF8 /* TodoListApp.swift */,
 				58586B1D2BDA0D6100145DF8 /* ContentView.swift */,
-				58586B372BDA2F7E00145DF8 /* ColorExtension.swift */,
 				58586B292BDA0D6800145DF8 /* View */,
 				58586B2B2BDA0D7800145DF8 /* Model */,
 				58586B2A2BDA0D6D00145DF8 /* ViewModel */,
@@ -182,7 +179,6 @@
 				58586B2D2BDA0DAE00145DF8 /* TodoModel.swift in Sources */,
 				58586B312BDA0EB400145DF8 /* TodoView.swift in Sources */,
 				58586B332BDA17C800145DF8 /* AddTodoView.swift in Sources */,
-				58586B382BDA2F7E00145DF8 /* ColorExtension.swift in Sources */,
 				58586B1E2BDA0D6100145DF8 /* ContentView.swift in Sources */,
 				58586B1C2BDA0D6100145DF8 /* TodoListApp.swift in Sources */,
 				58586B362BDA21A200145DF8 /* TodoViewModel.swift in Sources */,
