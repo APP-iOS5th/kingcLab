@@ -22,7 +22,6 @@ class TodoViewModel: ObservableObject {
     }
     
     func toggleComplete(todo: Task) {
-        
         todo.completed.toggle()
     }
     
