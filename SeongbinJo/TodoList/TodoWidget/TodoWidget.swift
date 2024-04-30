@@ -7,6 +7,13 @@
 
 import WidgetKit
 import SwiftUI
+import SwiftData
+
+// 작성
+struct TaskEntry: TimelineEntry {
+    let date: Date
+    let task: Task
+}
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
